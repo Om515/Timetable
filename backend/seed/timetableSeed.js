@@ -19,6 +19,8 @@ async function seedDatabase() {
   console.log('🔄 Connecting to Database...');
 
   try {
+    const ensureDatabaseExists = require('../config/initDb');
+    await ensureDatabaseExists();
     // =========================================================
     // 1. RESET DATABASE
     // =========================================================

@@ -6,6 +6,8 @@ const PORT = process.env.PORT || 8000;
 
 const startServer = async () => {
   try {
+    const ensureDatabaseExists = require('./config/initDb');
+    await ensureDatabaseExists();
     await sequelize.authenticate();
     console.log('MySQL connected successfully.');
     
